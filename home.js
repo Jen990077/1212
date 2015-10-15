@@ -16,6 +16,6 @@ Home.ButtonClick = function () {
         type: "POST",
         dataType: "html",
         data: content,
-        success: function (data) { $("#output").append(data); }
+        success: function (data) { $(".output").append(data); }
     });
 }
