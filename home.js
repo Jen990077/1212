@@ -1,16 +1,21 @@
-var Home = {}
 
-Home.ButtonClick = function () {
-    $.ajax
-     ({
-         url: "Home/GetPlayerInformation",
-         data: { PlayerNumber: $(".output").val() },
-         success: function (result) {append(result); }
-     });
-}
+$(document).ready(function (){
+    $(".player-number-button").click(function(){
+        $.ajax
+         ({
+         
+             url: "GetPlayerInformation",
+             data: { PlayerNumber: $(".player-number-textbox").val() },
 
-$(document).ready(function () {
-    $(".button").click(Home.ButtonClick);
 
-});
+             success: function (response)
+             {
+                 $(".output") .innerHTML = response;
+             }, 
+
+         })
+
+    }); 
+
+})
 
